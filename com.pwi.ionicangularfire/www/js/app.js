@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -55,12 +55,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-lists': {
           templateUrl: 'templates/tab-lists.html',
-          controller: 'ListsCtrl'
+          controller: 'ListsCtrl as lists'
         }
       }
     })
     .state('tab.list-detail', {
-      url: '/lists/:listId',
+      url: '/lists/:id',
       views: {
         'tab-lists': {
           templateUrl: 'templates/list-detail.html',
@@ -78,8 +78,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   });
-
+   
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
+
+  // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCYf24HUySojyf2ZBQ_BQlJuJ_P8VfxSHk",
+        authDomain: "prograinteractiva.firebaseapp.com",
+        databaseURL: "https://prograinteractiva.firebaseio.com",
+        storageBucket: "prograinteractiva.appspot.com",
+      };
+      firebase.initializeApp(config);
 
 });

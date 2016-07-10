@@ -1,15 +1,11 @@
 <ion-view view-title="Lists">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-thumbnail-left" ng-repeat="list in lists" type="item-text-wrap" href="#/tab/lists/{{list.id}}">
-        <img ng-src="{{list.face}}">
+      <ion-item class="item-remove-animate item-avatar item-thumbnail-left" ng-repeat="list in lists.catalog" type="item-text-wrap" href="#/tab/lists/{{list.id}}">
+        <img ng-src="{{list.image}}">
         <h2>{{list.name}}</h2>
         <p>{{list.price}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
-
-        <ion-option-button class="button-assertive" ng-click="remove(list)">
-          Delete
-        </ion-option-button>
       </ion-item>
     </ion-list>
   </ion-content>

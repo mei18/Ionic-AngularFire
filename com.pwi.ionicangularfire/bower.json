@@ -1,7 +1,29 @@
 {
   "name": "HelloIonic",
-  "private": "true",
+  "private": true,
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.3.1"
-  }
+  },
+  "dependencies": {
+    "angular-animate": "1.5.3",
+    "angular-sanitize": "1.5.3",
+    "angular-ui-router": "0.2.13",
+    "angularfire": "^2.0.1",
+    "firebase": "^3.1.0"
+  },
+  "homepage": "https://github.com/mei18/Ionic-AngularFire",
+  "authors": [
+    "Melanie Liang <melly.strearshy@gmail.com>"
+  ],
+  "description": "game list",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ]
 }
